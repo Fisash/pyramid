@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc.exe сборка проекта",
+            "command": "C:\\Users\\Fisash\\scoop\\apps\\gcc\\current\\bin\\gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "main.c",          
+                "vec.c",
+				"input_output.c",    
+				"anal_geom.c",                          
+                "-o",
+                "${fileDirname}\\output.exe" 
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "компилятор: C:\\Users\\Fisash\\scoop\\apps\\gcc\\current\\bin\\gcc.exe"
+        }
+    ]
+}

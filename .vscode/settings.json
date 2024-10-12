@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "vec.h": "c",
+        "input_output.h": "c",
+        "anal_geom.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
