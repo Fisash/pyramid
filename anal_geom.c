@@ -41,9 +41,11 @@ void get_plane_equation(char * s, point a, point b, point c)
         sprintf(temp + strlen(temp), "%s%s ",
             (t > 0 && strlen(temp) > 0) ? "+" : "", t_char);
     }
-
     sprintf(temp + strlen(temp), "= 0");
-
-
     strcpy(s, temp);
+}
+
+void get_canon_line_equation(char *s, vector3 guiding, point m)
+{
+    sprintf(s, "(x-%f)/%f = (y-%f)/%f = (z-%f)/%f", m.x, guiding.x, m.y, guiding.y, m.z, guiding.z);
 }

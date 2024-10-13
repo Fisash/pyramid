@@ -51,9 +51,19 @@ int main(void)
         printf("Angle between AD edge and ABC plane = %f rad = %f deg\n", AD_ABC_angle, (AD_ABC_angle*180/3.1415));
         printf(INDENT);
         
-        char pl_equa[50];
-        get_plane_equation(pl_equa, A, B, C);
-        printf("ABC plane equation: %s\n", pl_equa);
+        char pl_equat[64];
+        get_plane_equation(pl_equat, A, B, C);
+        printf("ABC plane equation: %s\n", pl_equat);
+        printf(INDENT);
+
+        char AD_equat[64];
+        get_canon_line_equation(AD_equat, AD, A);
+        printf("AD line canon equatuin: %s\n", AD_equat);
+        printf(INDENT);
+
+        char AH_equat[64];
+        get_canon_line_equation(AH_equat, ABC_normal, D);
+        printf("Height line canon equatuin: %s\n", AH_equat);
         printf(INDENT);
       
         getchar();
