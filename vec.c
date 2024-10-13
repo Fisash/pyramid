@@ -48,6 +48,12 @@ float get_angle_between_vectors(vector3 v1, vector3 v2)
     return acos(cos);
 }
 
+float get_angle_between_edge_and_face(vector3 edge, vector3 normal)
+{
+    float sin = (fabsf(scalar_product(edge, normal)))/(get_length(edge)*get_length(normal));
+    return asin(sin);
+}
+
 vector3 vector_product(vector3 v1, vector3 v2)
 {
     vector3 res;

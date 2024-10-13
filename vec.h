@@ -25,6 +25,8 @@ float scalar_product(vector3 v1, vector3 v2);
 
 float get_angle_between_vectors(vector3 v1, vector3 v2);
 
+float get_angle_between_edge_and_face(vector3 edge, vector3 normal);
+
 vector3 vector_product(vector3 v1, vector3 v2);
 
 float mixed_product(vector3 a, vector3 b, vector3 c);

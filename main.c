@@ -42,9 +42,20 @@ int main(void)
         printf("Volume of ABCD pyramide is %f\n", volume);
         printf(INDENT);
         
+        float height = volume / ABC_area * 3;
+        printf("ABCD pyramid height is %f\n", height);
+        printf(INDENT);
+
+        vector3 ABC_normal = normal_vector(A, B, C);
+        float AD_ABC_angle = get_angle_between_edge_and_face(AD, ABC_normal);
+        printf("Angle between AD edge and ABC plane = %f rad = %f deg\n", AD_ABC_angle, (AD_ABC_angle*180/3.1415));
+        printf(INDENT);
+        
         char pl_equa[50];
         get_plane_equation(pl_equa, A, B, C);
         printf("ABC plane equation: %s\n", pl_equa);
+        printf(INDENT);
+      
         getchar();
     }
     else
