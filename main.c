@@ -55,6 +55,10 @@ int main(void)
         get_plane_equation(pl_equat, A, B, C);
         printf("ABC plane equation: %s\n", pl_equat);
         printf(INDENT);
+        vector3 ABD_normal = normal_vector(A, B, D);
+        float dihed = get_angle_between_vectors(ABC_normal, ABD_normal);
+        printf("Dihedral angle between the planes ABC and ABD = %f rad = %f deg\n", dihed, (dihed*180/3.1415));
+        printf(INDENT);
 
         char AD_equat[64];
         get_canon_line_equation(AD_equat, AD, A);
@@ -67,6 +71,9 @@ int main(void)
         printf(INDENT);
       
         getchar();
+        printf(INDENT);
+        getchar();
+        
     }
     else
     {
