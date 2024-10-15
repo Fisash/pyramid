@@ -53,7 +53,6 @@ void get_canon_line_equation(char *s, vector3 guiding, point m)
     sprintf(format_my, (m.y == (int)m.y) ? "%.0f" : "%f", m.y);
     sprintf(format_mz, (m.z == (int)m.z) ? "%.0f" : "%f", m.z);
 
-   
     char format_gx[10], format_gy[10], format_gz[10];
     sprintf(format_gx, (guiding.x == (int)guiding.x) ? "%.0f" : "%f", guiding.x);
     sprintf(format_gy, (guiding.y == (int)guiding.y) ? "%.0f" : "%f", guiding.y);
@@ -64,4 +63,18 @@ void get_canon_line_equation(char *s, vector3 guiding, point m)
         format_my, format_gy,
         format_mz, format_gz
     );
+}
+
+point get_line_plane_intersection_point(point p_a, point p_b, point p_c, vector3 l_g, point l_p)
+{
+    vector3 n = normal_vector(p_a, p_b, p_c);
+    float d = (-1*p_a.x*n.x)-(p_a.y*n.y)-(p_a.z*n.z); 
+
+    float param = -1*(n.x*l_p.x + n.y*l_p.y + n.z*l_p.z + d)/(n.x*l_g.x + n.y*l_g.y + n.z * l_g.z);
+
+    point res;
+    res.x = l_p.x + l_g.x*param;
+    res.y = l_p.y + l_g.y*param;
+    res.z = l_p.z + l_g.z*param;
+    return res;
 }

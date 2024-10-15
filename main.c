@@ -69,8 +69,9 @@ int main(void)
         get_canon_line_equation(AH_equat, ABC_normal, D);
         printf("Height line canon equatuin: %s\n", AH_equat);
         printf(INDENT);
-      
-        getchar();
+        point H = get_line_plane_intersection_point(A, B, C, ABC_normal, D);
+        printf("The point of intersection of the height and the plane of the base:\n");
+        printf("(%f, %f, %f)\n", H.x, H.y, H.z);
         printf(INDENT);
         getchar();
         
