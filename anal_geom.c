@@ -7,6 +7,7 @@ vector3 normal_vector(point a, point b, point c)
     vector3 res;
     res.x = (b.y - a.y)*(c.z - a.z) - (b.z - a.z)*(c.y-a.y);
     res.y = (b.x - a.x)*(c.z - a.z) - (b.z - a.z)*(c.x-a.x);
+    res.y *= -1;
     res.z = (b.x - a.x)*(c.y - a.y) - (b.y - a.y)*(c.x-a.x);
     return res;
 }
